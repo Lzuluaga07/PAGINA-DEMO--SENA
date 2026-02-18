@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  
+<meta charset="UTF-8">
+<title>PRONALFRUT</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0;font-family:'Poppins',sans-serif}
+body{background:#f8f8f8;color:#333}
+
+header{
+  background:#1e8f4d;color:#fff;padding:15px 30px;
+  display:flex;justify-content:space-between;align-items:center;
+  position:sticky;top:0;z-index:1000
+}
+nav a{color:#fff;margin:0 10px;text-decoration:none;font-weight:500}
+nav a:hover{text-decoration:underline}
+
+section{padding:60px 30px;max-width:1200px;margin:auto;position:relative}
+
+.hero{
+  display:flex;align-items:center;min-height:300px;position:relative;overflow:hidden
+}
+.hero::after{
+  content:"";
+  background:url("https://upload.wikimedia.org/wikipedia/commons/8/8b/Blackberry_fruit.jpg") no-repeat right center;
+  background-size:380px;
+  position:absolute;
+  top:0;right:0;bottom:0;width:50%;
+  opacity:0.15;
+  pointer-events:none
+}
+.hero-text{z-index:2}
+.hero-text h1{font-size:40px;color:#1e8f4d}
+.hero-text p{margin:15px 0;font-size:18px}
+
+.whatsapp{
+  display:inline-flex;align-items:center;gap:10px;
+  background:#25D366;color:#fff;padding:12px 18px;border-radius:30px;
+  text-decoration:none;font-weight:600
+}
+
+.cards{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:25px;margin-top:30px
+}
+.card{
+  background:#fff;border-radius:15px;padding:15px;text-align:center;
+  box-shadow:0 4px 10px rgba(0,0,0,.1)
+}
+.card img{
+  width:100%;
+  height:160px;
+  object-fit:contain;
+  background:#fff;
+  padding:10px;
+  border-radius:10px
+}
+.card h3{margin:10px 0;color:#1e8f4d}
+
+button{
+  background:#1e8f4d;color:#fff;border:none;
+  padding:8px 14px;border-radius:8px;cursor:pointer;margin:5px
+}
+
+#seleccion{margin-top:20px;font-weight:600}
+
+iframe{width:100%;height:350px;border:0;border-radius:10px;margin-top:15px}
+
+footer{background:#1e8f4d;color:#fff;text-align:center;padding:20px;margin-top:40px}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div style="font-size:24px;font-weight:700">PRONALFRUT</div>
+  <nav>
+    <a href="#inicio">Inicio</a>
+    <a href="#quienes">Quiénes Somos</a>
+    <a href="#porque">Por qué elegirnos</a>
+    <a href="#catalogo">Catálogo</a>
+    <a href="#testimonios">Testimonios</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+</header>
+
+<section id="inicio" class="hero">
+  <div class="hero-text">
+    <h1>Frutas y pulpas naturales</h1>
+    <p>Calidad y frescura directo del campo colombiano.</p>
+    <a class="whatsapp" href="https://wa.me/573103612190" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="26">
+      ¿Quieres comprar? Clic aquí
+    </a>
+  </div>
+</section>
+
+<section id="quienes">
+  <h2>Quiénes Somos</h2>
+  <p>PRONALFRUT es una empresa dedicada a la comercialización de frutas y pulpas naturales con altos estándares de calidad.</p>
+</section>
+
+<section id="porque">
+  <h2>¿Por qué elegirnos?</h2>
+  <p>✔ Productos frescos<br>✔ Atención personalizada<br>✔ Cumplimiento en entregas<br>✔ Apoyo al campo colombiano</p>
+</section>
+
+<section id="catalogo">
+<h2>Catálogo</h2>
+
+<div class="cards">
+  <div class="card">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c4/Orange-Fruit-Pieces.jpg" alt="Naranja">
+    <h3>Naranja</h3>
+    <button onclick="agregar('Naranja 🍊')">Agregar</button>
+    <button onclick="eliminar('Naranja 🍊')">Eliminar 😢</button>
+  </div>
+
+  <div class="card">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/9/90/Hapus_Mango.jpg" alt="Mango">
+    <h3>Mango</h3>
+    <button onclick="agregar('Mango 🥭')">Agregar</button>
+    <button onclick="eliminar('Mango 🥭')">Eliminar 😢</button>
+  </div>
+
+  <div class="card">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/8/8b/Blackberry_fruit.jpg" alt="Mora">
+    <h3>Mora</h3>
+    <button onclick="agregar('Mora 🍇')">Agregar</button>
+    <button onclick="eliminar('Mora 🍇')">Eliminar 😢</button>
+  </div>
+</div>
+
+<p id="seleccion">🛒 Seleccionaste: <span id="lista">ninguna</span></p>
+</section>
+
+<section id="testimonios">
+<h2>Testimonios</h2>
+<p>⭐ Excelente calidad y puntualidad.</p>
+<p>⭐ Las pulpas son deliciosas.</p>
+<p>⭐ Muy buena atención.</p>
+</section>
+
+<section id="contacto">
+<h2>Contacto</h2>
+<p>📍 Bogotá – Puente Aranda<br>Cra 64A #4B-41</p>
+<iframe src="https://www.google.com/maps?q=Cra+64A+4B-41+Puente+Aranda+Bogotá&output=embed"></iframe>
+</section>
+
+<footer>
+© 2026 PRONALFRUT – Todos los derechos reservados
+</footer>
+
+<script>
+let frutas=[];
+
+function agregar(f){
+  frutas.push(f);
+  actualizar();
+}
+function eliminar(f){
+  let i=frutas.indexOf(f);
+  if(i>-1) frutas.splice(i,1);
+  actualizar();
+}
+function actualizar(){
+  document.getElementById("lista").innerText = frutas.length? frutas.join(", "):"ninguna";
+}
+</script>
+
+</body>
+</html>
